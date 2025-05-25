@@ -44,6 +44,7 @@ for(i=0;i<filas;i++){
 	}
 	printf("\n");
 }
+	return 0;
 }
 
 
