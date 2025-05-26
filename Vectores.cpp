@@ -19,13 +19,14 @@ int main(){
 	}
 	for(i=0;i<filas;i++){
 		for(j=0;j<columnas;j++){
-			printf("%2.f", m1[i][j]);
+			printf("%.2f ", m1[i][j]);
 		}
 		printf("\n");
 	}
-	printf("\nIngrese el numero de columna a modificar [0]-[%d]: ", columnas-1);
+	printf("\nIngrese el numero de columna a modificar [1]-[%d]: ", columnas);
     scanf("%d", &cam);
-    printf("Ingrese el factor para multiplciar:");
+	cam--;
+    printf("Ingrese el escalar:");
     scanf("%f", &k);
     
     for(i=0;i<filas;i++){
@@ -38,12 +39,12 @@ int main(){
 			}
 		}
 	}
-for(i=0;i<filas;i++){
-	for(j=0;j<columnas;j++){
-		printf("%f", m2[i][j]);
+	for(i=0;i<filas;i++){
+		for(j=0;j<columnas;j++){
+			printf("%.2f ", m2[i][j]);
+		}
+		printf("\n");
 	}
-	printf("\n");
-}
 	return 0;
 }
 
