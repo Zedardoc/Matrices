@@ -3,7 +3,7 @@
 #include<stdio.h>
 
 ///Declaracion de variables globales
-int Estu, i, m=0, f=0, j, gen, opcion;
+int Estu, i, m=0, f=0, j, opcion;
 int main(){
  	printf("Bienvenido, promedio de notas\n");
  		while(1){///Digita la cantidad de alumnos hasta que ponga un valor dentro del limite	
@@ -69,13 +69,14 @@ int main(){
 		            		}
 	        		}	
 			}
+		int	gen[Estu];
 	 	printf("Ingrese el genero de los alumnos, 0-Fem, 1-Masc:\n");
 	 	for(i=0;i<Estu;i++){
 	 		while(1){///Pide el genero de los alumnos hasta que pida el de todos
 	 			printf("Alumno[%d]:", i+1);
-	 			scanf("%d", &gen);
-		 			if(gen==0 || gen==1){
-		 				if(gen==0){
+	 			scanf("%d", &gen[i]);
+		 			if(gen[i]==0 || gen[i]==1){
+		 				if(gen[i]==0){
 							f++;
 						}
 					 	else{
@@ -117,7 +118,7 @@ int main(){
 	printf("||||Datos registrados exitosamente||||\n");	 
 	 	printf("|||Cantidad de alumnos: %d|||\n", Estu);
 			 for(i=0;i<Estu;i++){///Imprime los datos registrados anteriormente
-		 		printf("|%d |%d |%.1f | %.1f|\n", i+1, Codigos[i], NotasA[i], NotasF[i]);
+		 		printf("|	%d 	|	%d 	| 	%d 	|	%.1f 	| 	%.1f	|\n", i+1, Codigos[i], gen[i], NotasA[i], NotasF[i]);
 		 	}
 		 
 	//Imprimir el menu y datos
