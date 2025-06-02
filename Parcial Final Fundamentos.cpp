@@ -23,8 +23,8 @@ int main(){
 	 			while (1) {
            				 printf("Alumno[%d]: ", i + 1);
 			        	 scanf("%d", &Codigos[i]);
-							 if (Codigos[i] < 0 || Codigos[i] > 999) {
-                				printf("El codigo debe estar entre 0 y 999.\n");
+							 if (Codigos[i]<100 || Codigos[i] > 999) {
+                				printf("El codigo debe tener 3 digitos.\n");
                 				continue;
             				}
 					for (j = 0; j < i; j++) {
