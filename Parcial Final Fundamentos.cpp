@@ -3,7 +3,7 @@
 #include<stdio.h>
 
 
-int Estu, i, m=0, f=0, gen, opcion;
+int Estu, i, m=0, f=0, j, gen, opcion;
  int main(){
  	printf("Bienvenido, promedio de notas\n");
  		while(1){	
@@ -11,26 +11,33 @@ int Estu, i, m=0, f=0, gen, opcion;
  			scanf("%d", &Estu);
  				if(Estu<=0 || Estu>=100){
  					printf("Cantidad no esta dentro del limite");
-	 }
+	 			}
 				 else{
 	 			break;
-	 }
-	 }
+	 			}
+	 	}
 	 	float NotasA[Estu], NotasF[Estu];
 	 	int Codigos[Estu];
 	 	printf("Ingrese los codigos de los alumnos:\n");
 	 		for(i=0;i<Estu;i++){
-	 			while(1){
-		 			printf("Alumno[%d]:", i+1);
-		 			scanf("%d", &Codigos[Estu]);
-			 			if(Codigos[Estu]>=0 && Codigos[Estu]<=999){
-			 				break;
-						 }
-						else{
-							printf("El dato debe estar entre 0 y 999, digite de nuevo\n");
-						}
-						 }
-		 }
+	 			while (1) {
+           				 printf("Alumno[%d]: ", i + 1);
+			        	 scanf("%d", &Codigos[i]);
+							 if (Codigos[i] < 0 || Codigos[i] > 999) {
+                				printf("El codigo debe estar entre 0 y 999.\n");
+                				continue;
+            				}
+					for (j = 0; j < i; j++) {
+		                		if (Codigos[j] == Codigos[i]) {
+		                    		printf("Codigo repetido. Ingrese uno nuevo.\n");
+		                    		break;
+		                		}
+	            			}
+		            		if (j == i) { 
+		                	break;    
+		            		}
+	        		}	
+			}
 	 	printf("Ingrese el genero de los alumnos, 0-Fem, 1-Masc:\n");
 	 	for(i=0;i<Estu;i++){
 	 		while(1){
@@ -56,7 +63,7 @@ int Estu, i, m=0, f=0, gen, opcion;
 		 		printf("Alumno[%d]:", i+1);
 				scanf("%f", &NotasA[Estu]); 
 					if(NotasA[Estu]<0 || NotasA[Estu]>5){
-						printf("Aqui calificamos de 0 a 5\n");
+						printf("Aqui calificamos de 0 a 5");
 					}
 					else{
 						break;
@@ -107,7 +114,8 @@ int Estu, i, m=0, f=0, gen, opcion;
 			printf("Opcion no existe");
 			break;
 		}
-	 }
+	 
+}
 	
  	
  	
