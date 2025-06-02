@@ -22,11 +22,41 @@ int main(){
 	 		for(i=0;i<Estu;i++){
 	 			while (1) {///Pide datos a ingresar hasta que llegue a la cantidad de alumnos. Aqui se pide el codigo
            				 printf("Alumno[%d]: ", i + 1);
-			        	 scanf("%d", &Codigos[i]);
-							 if (Codigos[i]<100 || Codigos[i] > 999) {
-                				printf("El codigo debe tener 3 digitos.\n");
-                				continue;
-            				}
+			        	 char code[3];
+						char ch;
+						int j = 0;
+						while (1) {
+					       ch = getch();
+					
+					        // Si presiona ENTER, se termina la entrada
+					        if (ch == 13) {
+					            if(j==3){
+					            	break;
+								}
+								else{
+									printf("Te faltan digitos\n");
+								}
+					        }
+					
+					        // Solo permitir números
+					        if(j<=2){
+						        if (ch >= '0' && ch <= '9') {
+						            if (j < 19) {  // Evitar desbordamiento del arreglo
+						                code[j] = ch;
+						                j++;
+						                printf("*");
+						            }
+						        }
+					        }
+					        else{
+					        	printf("\nHas alcanzado los digitos maximos\n");
+							}
+					    }
+							
+						    code[j] = '\0';  // Terminar la cadena
+						    Codigos[i] = atoi(code); //convertir un char* a entero
+						    printf("\n");
+						    
 								for (j = 0; j < i; j++) {///Agregamos un nuevo iterador que nos permite revisar los codigos ingresados
 		                			if (Codigos[j] == Codigos[i]) {///si se repite, le pide al usuario que digite uno nuevo
 		                    			printf("Codigo repetido. Ingrese uno nuevo.\n");
@@ -108,7 +138,7 @@ int main(){
 				 printf("||El promedio de algebra de todos los estudiantes fue de %.1f||\n\n", promedio);
 				break;
 			 
-			case 2:///si opcion==2
+			case 2://si opcion==2
 				float nota;
 				nota=0;
 				for(int i = 0; i<Estu;i++){
@@ -123,11 +153,46 @@ int main(){
 				break;												//por cada 1, m++
 			
 			case 4:///si opcion==4
+				i = 0;
 				int codigo;
+				codigo = 0;
 				int encontrado;
 				encontrado = 0;
 				printf("Especifique el codigo deseado: \n");
-				scanf("%d", &codigo);///Digita el codigo que desea bsucar
+				char code[4];
+				char ch;
+				while (1) {
+			        ch = getch();
+					
+					// Si presiona ENTER, se termina la entrada
+			        if (ch == 13) {
+			            if(i==3){
+			            	break;
+						}
+						else{
+							printf("Te faltan digitos\n");
+						}
+			        }
+			
+			        // Solo permitir números
+			        if(i<=2){
+				        if (ch >= '0' && ch <= '9') {
+				            if (i < 19) {  // Evitar desbordamiento del arreglo
+				                code[i] = ch;
+				                i++;
+				                printf("*");
+				            }
+				        }
+			        }
+			        else{
+			        	printf("\nHas alcanzado los digitos maximos\n");
+					}	
+			    }
+			
+			    code[i] = '\0';  // Terminar la cadena
+			
+			    codigo = atoi(code);  // Convertir la cadena a entero
+				printf("\n");
 				for(int i=0;i<Estu; i++){
 					if(codigo==Codigos[i]){///Se empieza a comparar el codigo pedido con los ya ingresados
 						printf("El codigo: %d - Algebra: %.1f - Fundamentos: %.1f\n", codigo, NotasA[i], NotasF[i]);
