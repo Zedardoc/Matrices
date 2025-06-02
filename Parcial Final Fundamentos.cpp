@@ -55,11 +55,11 @@ int Estu, i, m=0, f=0, gen, opcion;
 		 	while(1){
 		 		printf("Alumno[%d]:", i+1);
 				scanf("%f", &NotasA[Estu]); 
-					if(NotasA[Estu]>=0 || NotasA[Estu]<=5){
-						break;
+					if(NotasA[Estu]<0 || NotasA[Estu]>5){
+						printf("Aqui calificamos de 0 a 5\n");
 					}
 					else{
-						printf("Aqui calificamos de 0 a 5");
+						break;
 					}
 			 }
 		 }
@@ -68,11 +68,11 @@ int Estu, i, m=0, f=0, gen, opcion;
 		 	while(1){
 		 		printf("Alumno[%d]:", i+1);
 				scanf("%f", &NotasF[Estu]); 
-					if(NotasA[Estu]>=0 || NotasA[Estu]<=5){
-						break;
+					if(NotasA[Estu]<0 || NotasA[Estu]>5){
+						printf("Aqui calificamos de 0 a 5\n");
 					}
 					else{
-						printf("Aqui calificamos de 0 a 5");
+						break;
 					}
 			 }
 		 }
