@@ -75,13 +75,17 @@ int Estu, i, m=0, f=0, j, gen, opcion;
 		 	while(1){
 		 		printf("Alumno[%d]:", i+1);
 				scanf("%f", &NotasF[Estu]); 
-					if(NotasA[Estu]<0 || NotasA[Estu]>5){
+					if(NotasF[Estu]<0 || NotasF[Estu]>5){
 						printf("Aqui calificamos de 0 a 5\n");
 					}
 					else{
 						break;
 					}
 			 }
+		 }
+	 printf("Cantidad de alumnos: %d\n", Estu);
+		 for(i=0;i<Estu;i++){
+		 	printf("%d. %d	%d  %3.f  %3.f\n", i+1, Codigos[i], gen[i], NotasA[i], NotasF[i]);
 		 }
 	 printf("Menu, escoja alguna de las siguientes opciones:\n");
 	 printf("1. Promedio de Algebra:\n");
