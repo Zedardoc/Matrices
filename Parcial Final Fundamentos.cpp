@@ -34,7 +34,8 @@ int main(){
 					            	break;
 								}
 								else{
-									printf("Te faltan digitos\n");
+									printf("\nTe faltan digitos, ingresa el codigo de nuevo\n");
+									j=0;
 								}
 					        }
 					
@@ -170,7 +171,8 @@ int main(){
 			            	break;
 						}
 						else{
-							printf("Te faltan digitos\n");
+							printf("\nTe faltan digitos, ingresa el codigo de nuevo\n");
+							i=0;
 						}
 			        }
 			
